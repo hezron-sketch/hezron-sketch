@@ -1,0 +1,38 @@
+name: Update README
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Runs every hour
+  push:
+    paths:
+      - 'README.md'
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Fetch current project
+      id: fetch_project
+      run: |
+        API_URL="http://api.yourservice.com/current-project"
+        RESPONSE=$(curl -s $API_URL)
+        CURRENT_PROJECT=$(echo $RESPONSE | jq -r '.project_name')
+        echo "current_project=$CURRENT_PROJECT" >> $GITHUB_ENV
+
+    - name: Update README
+      run: |
+        README_FILE="README.md"
+        sed -i "s|🔭 I’m currently working on.*|🔭 I’m currently working on ${CURRENT_PROJECT}|g" $README_FILE
+
+    - name: Commit changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add README.md
+        git commit -m "Update dynamic content in README" || echo "No changes to commit"
+        git push

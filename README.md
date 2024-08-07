@@ -1,4 +1,4 @@
-# Hi there, I'm Hezron 👋
+# Hi there, I'm mtu HALF 👋
 
 Welcome to my GitHub profile! I'm passionate about [your interests or profession], and I love working on projects that involve [specific technologies or fields]. Below, you'll find information about me, my projects, and how to get in touch.
 
@@ -9,8 +9,8 @@ Welcome to my GitHub profile! I'm passionate about [your interests or profession
 - 👯 I’m looking to collaborate on [projects or fields of interest]
 - 🤔 I’m looking for help with [specific help needed]
 - 💬 Ask me about [topics you can help with]
-- 📫 How to reach me: [email or other contact method]
-- ⚡ Fun fact: [a fun fact about you]
+- 📫 How to reach me: 
+- ⚡ Fun fact: Parallel universes exist
 
 ## 🛠️ Technologies & Tools
 
